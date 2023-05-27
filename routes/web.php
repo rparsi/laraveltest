@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/actormovies', [ActorController::class, 'index']);
+
+Route::post('/filtered-actormovies', [ActorController::class, 'actormovies']);
+
+Route::get('/search', [ActorController::class, 'search']);
+
+Route::post('/searchresult', [ActorController::class, 'searchresult']);

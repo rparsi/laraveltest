@@ -16,6 +16,6 @@ class Movie extends Model
 
     public function actors(): BelongsToMany
     {
-        return $this->BelongsToMany(Actor::class);
+        return $this->belongsToMany(Actor::class);
     }
 }
